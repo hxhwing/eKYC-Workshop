@@ -1,1 +1,5 @@
-# eKYC-Workshop
+# AWS eKYC Workshop
+
+This is workshop lab materials for AWS eKYC solution, including: 
+ 1. ID verification -- Verify ID and get OCR by Textract
+ 2. Identity verification -- Verify Selfie, and compare selfie with face on ID picture

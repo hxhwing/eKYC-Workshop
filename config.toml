@@ -1,0 +1,43 @@
+baseURL = "https://networkingday.awsguru.top/"
+ignoreFiles = [ "\\.files/README.md$",  ]
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "eKYC on AWS Workshop"
+theme = "hugo-theme-learn"
+uglyurls = false
+sectionPagesMenu = "main"
+relativeURLs = true
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[params]
+  editURL = "https://github.com/hxhwing/eKYC-Workshop"
+  themeVariant = "mine"
+  showVisitedLinks = false
+  author = "<hxh@amazon.com>"
+  description = "AWS eKYC Workshop"
+  disableSearch = false
+  disableAssetsBusting = false
+  disableShortcutsTitle = true
+  branch = "master"
+  pygmentsUseClasses = true
+  pygmentsCodeFences = true
+  pygmentsCodefencesGuessSyntax = true
+  pygmentsStyle = "tango"
+  codeRepoName = "hxhwing/eKYC-Workshop"
+
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> GitHub Project"
+url = "https://github.com/hxhwing/eKYC-Workshop"
+weight = 30
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-envelope'></i> Have questions?"
+url = "https://github.com/hxhwing/eKYC-Workshop/issues"
+weight = 40
+
+[outputs]
+home = [ "HTML", "JSON"]
+page = [ "HTML" ]
