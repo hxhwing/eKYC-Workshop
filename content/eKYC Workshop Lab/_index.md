@@ -8,16 +8,14 @@ tags:
 
 ![](/images/eKYC/Architecture.png)
 
-eKYC Workshop 将完全基于 Serverless，完成 ID Verification 和 Identity Verification 两项工作，主要包括以下几部分：
+eKYC Workshop 将完全基于 Serverless，完成 ID Verification 和 Identity Verification 两项任务，KYC 工作流均通过 Step Function 进行编排，主要包括以下几部分：
 
- **1. ID Verification 和 Identity Verification 过程均通过 Step Function 实现工作流编排**
-
- **2. 用户上传 ID document (照片或复印件) 到 S3，通过 SQS 触发 Lambda，然后执行 ID Verification Step Functions 工作流**
+ **1. 用户上传 ID document (照片或复印件) 到 S3，通过 SQS 触发 Lambda，然后执行 ID Verification Step Functions 工作流**
     
    2.1. 利用 Rekognition DetectFace API 检测证件照中是否包含人脸
    2.2. 利用 Textract AnalyzeID API 提取证件信息，并将 OCR 结果存储到 DynamoDB
 
- **3. 用户上传自拍照到 S3，通过 SQS 触发 Lambda，然后执行 Identity Verification Step Functions 工作流**
+ **2. 用户上传自拍照到 S3，通过 SQS 触发 Lambda，然后执行 Identity Verification Step Functions 工作流**
     
    3.1. 利用 Rekognition DetectFace API 检测自拍照中是否包含人脸
 
@@ -29,7 +27,7 @@ eKYC Workshop 将完全基于 Serverless，完成 ID Verification 和 Identity V
 
    3.5. 利用 Rekognition CompareFace API 检测自拍照和证件照中的人脸是否一致
 
-**4. 上述所有工作流的状态信息，比如ID 和 Identity Verification 的检测状态(Pass/Fail)，以及失败原因,均保存在 DynamoDB 中**
+**上述所有工作流的状态信息，比如ID 和 Identity Verification 的检测状态(Pass/Fail)，以及失败原因,均保存在 DynamoDB 中**
 
 DynamoDB table 字段如下： 
 ![](/images/eKYC/DDB.png)
