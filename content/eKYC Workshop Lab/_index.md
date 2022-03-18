@@ -13,6 +13,7 @@ eKYC Workshop 将完全基于 Serverless，完成 ID Verification 和 Identity V
  **1. 用户上传 ID document (照片或复印件) 到 S3，通过 SQS 触发 Lambda，然后执行 ID Verification Step Functions 工作流**
     
    2.1. 利用 Rekognition DetectFace API 检测证件照中是否包含人脸
+   
    2.2. 利用 Textract AnalyzeID API 提取证件信息，并将 OCR 结果存储到 DynamoDB
 
  **2. 用户上传自拍照到 S3，通过 SQS 触发 Lambda，然后执行 Identity Verification Step Functions 工作流**
