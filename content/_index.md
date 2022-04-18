@@ -23,6 +23,8 @@ eKYC (Know Your Customer) 是一个用于验证客户身份的电子流程，作
 
    通常对用户人脸进行活体检测 (Liveness Detection)，或要求上传自拍照进行人脸识别，并与证件照进行比对，确保人证一致
 
+## eKYC at a glance
+![](/images/eKYC/AtAGlance.png)
 
 ## eKYC Workshop
 
